@@ -20,13 +20,13 @@ st.set_page_config(
 @st.cache_data
 def load_data():
     # Use absolute path from project root
-    df = pd.read_csv('../data/imdb_data_cleaned.csv')
+    df = pd.read_csv('../datas/imdb_data_cleaned.csv')
     return df
 
 @st.cache_resource
 def load_model():
     # Use absolute path from project root
-    with open('../models/Random_Forest_Tuned_model.pkl', 'rb') as f:
+    with open('../model/Random_Forest_Tuned_model.pkl', 'rb') as f:
         model = pickle.load(f)
     return model
 
