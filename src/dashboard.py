@@ -19,13 +19,13 @@ st.set_page_config(
 # Cache data loading for performance
 @st.cache_data
 def load_data():
-    # Use absolute path from project root
+    # Use files from src directory (DVC tracked files)
     df = pd.read_csv('imdb_data_cleaned.csv')
     return df
 
 @st.cache_resource
 def load_model():
-    # Use absolute path from project root
+    # Use files from src directory (DVC tracked files)
     with open('Random_Forest_Tuned_model.pkl', 'rb') as f:
         model = pickle.load(f)
     return model
